@@ -25,8 +25,9 @@ public class UserService {
         Optional<User> userOptional = this.userRepository.findById(id);
         if (userOptional.isPresent()) {
             return userOptional.get();
+        } else {
+            return null;
         }
-        return null;
     }
 
     public User handleUpdateUser(User user) {
